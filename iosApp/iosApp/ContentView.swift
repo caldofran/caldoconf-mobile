@@ -1,13 +1,10 @@
 import SwiftUI
 import shared
 
-func greet() -> String {
-    return Greeting().greeting()
-}
-
 struct ContentView: View {
     var body: some View {
-        Text(greet())
+        let event = Event(identifier: "12345", motto: "Hello biatches")
+        Text(event.motto!)
     }
 }
 
