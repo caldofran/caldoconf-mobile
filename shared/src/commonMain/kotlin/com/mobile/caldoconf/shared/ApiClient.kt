@@ -17,10 +17,12 @@ class ApiClient {
     }
 
     companion object {
-        private const val CALDOCONF_ENDPOINT = "http://127.0.0.1:8080/"
+        // This is temporal until we have a real service
+        // To address the local service running in the computer from the
+        // Android emulator, the Api Client must point to `10.0.2.2` IP
+        // More info: https://developer.android.com/studio/run/emulator-networking.html
+        private const val CALDOCONF_ENDPOINT = "http://10.0.2.2:8080/conferences"
     }
 
-    suspend fun getEvents(): List<Event> {
-        return httpClient.get(CALDOCONF_ENDPOINT)
-    }
+    suspend fun getEvents(): List<Event> = httpClient.get(CALDOCONF_ENDPOINT)
 }
