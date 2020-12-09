@@ -1,69 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main_view"
-    android:fillViewport="true"
+    android:background="#E7E7E7"
+    tools:context=".MainActivity"
     >
 
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:orientation="vertical"
-      android:paddingEnd="20sp"
-      android:paddingStart="20sp"
-      >
+      android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/dateText"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/buttonBottomSheetPersistent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/date_text"
-        android:textColor="#F44336"
-        android:textSize="18sp"
-        />
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:text="Open Persistent Bottom Sheet" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="12sp"
-        />
-
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title_text"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="12sp"
-        />
-
-    <TextView
-        android:id="@+id/informationTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/information_title"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="12sp"
-        />
-
-    <TextView
-        android:id="@+id/informationContent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:lineSpacingExtra="8sp"
-        android:text="@string/information_content"
-        android:textSize="18sp"
-        />
   </LinearLayout>
-</ScrollView>
+
+  <include
+      android:id="@+id/activity_information"
+      layout="@layout/activity_information"
+      />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

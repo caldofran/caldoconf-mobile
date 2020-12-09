@@ -2,45 +2,30 @@ package com.mobile.caldoconf.androidApp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
-import com.mobile.caldoconf.shared.ApiClient
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.cancel
-import kotlinx.coroutines.launch
+import android.view.View
+import android.widget.Button
+import android.widget.ScrollView
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class MainActivity : AppCompatActivity() {
-    private val mainScope = MainScope()
-    private val apiClient = ApiClient()
-    private lateinit var informationTitle: TextView
-    private lateinit var informationContent: TextView
+    private lateinit var bottomSheetBehavior: BottomSheetBehavior<ScrollView>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        informationTitle = findViewById(R.id.informationTitle)
-        informationContent = findViewById(R.id.informationContent)
-    }
+        val bottomSheet: ScrollView = findViewById(R.id.activity_information)
+        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
 
-    override fun onResume() {
-        super.onResume()
-//        loadData()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        mainScope.cancel()
-    }
-
-    private fun loadData() {
-        mainScope.launch {
-            runCatching {
-                apiClient.getEvents()
-            }.onSuccess {
-                informationTitle.text = it.toString()
-            }.onFailure {
-                informationTitle.text = it.localizedMessage
-            }
+        val buttonBottomSheetPersistent: Button = findViewById(R.id.buttonBottomSheetPersistent)
+        buttonBottomSheetPersistent.setOnClickListener {
+            val state =
+                if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED)
+                    BottomSheetBehavior.STATE_COLLAPSED
+                else
+                    BottomSheetBehavior.STATE_EXPANDED
+            bottomSheetBehavior.state = state
         }
     }
 }
