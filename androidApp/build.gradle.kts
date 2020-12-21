@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -20,6 +22,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.0.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
+    implementation("com.google.android.gms:play-services-maps:17.0.0")
 }
 android {
     compileSdkVersion(29)
@@ -29,6 +32,8 @@ android {
         targetSdkVersion(29)
         versionCode = 1
         versionName = "1.0"
+
+        manifestPlaceholders["mapsApiKey"] = gradleLocalProperties(rootDir).getProperty("MAPS_API_KEY")
     }
     buildTypes {
         getByName("release") {
