@@ -6,19 +6,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_white"
+    android:fillViewport="true"
     app:behavior_peekHeight="100dp"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-    android:fillViewport="true"
     >
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingEnd="20sp"
         android:paddingStart="20sp"
-        android:id="@+id/linearLayout"
         >
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_conversion_absoluteHeight="12dp"
+            tools:layout_conversion_absoluteWidth="371dp"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="24dp"
+            />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_conversion_absoluteHeight="12dp"
+            tools:layout_conversion_absoluteWidth="371dp"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="77dp"
+            />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_conversion_absoluteHeight="12dp"
+            tools:layout_conversion_absoluteWidth="371dp"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="121dp"
+            />
 
         <TextView
             android:id="@+id/dateText"
@@ -28,40 +56,9 @@
             android:textColor="#F44336"
             android:textSize="18sp"
             tools:layout_conversion_absoluteHeight="24dp"
+            tools:layout_conversion_absoluteWidth="371dp"
+            tools:layout_editor_absoluteX="20dp"
             tools:layout_editor_absoluteY="0dp"
-            tools:layout_editor_absoluteX="20dp"
-            tools:layout_conversion_absoluteWidth="371dp"
-            />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout_conversion_absoluteHeight="12dp"
-            tools:layout_editor_absoluteY="24dp"
-            tools:layout_editor_absoluteX="20dp"
-            tools:layout_conversion_absoluteWidth="371dp"
-            />
-
-        <TextView
-            android:id="@+id/titleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title_text"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            tools:layout_conversion_absoluteHeight="40dp"
-            tools:layout_editor_absoluteY="36dp"
-            tools:layout_editor_absoluteX="20dp"
-            tools:layout_conversion_absoluteWidth="371dp"
-            />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout_conversion_absoluteHeight="12dp"
-            tools:layout_editor_absoluteY="77dp"
-            tools:layout_editor_absoluteX="20dp"
-            tools:layout_conversion_absoluteWidth="371dp"
             />
 
         <TextView
@@ -72,18 +69,22 @@
             android:textSize="24sp"
             android:textStyle="bold"
             tools:layout_conversion_absoluteHeight="32dp"
-            tools:layout_editor_absoluteY="89dp"
-            tools:layout_editor_absoluteX="20dp"
             tools:layout_conversion_absoluteWidth="371dp"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="89dp"
             />
 
-        <Space
+        <TextView
+            android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:layout_conversion_absoluteHeight="12dp"
-            tools:layout_editor_absoluteY="121dp"
-            tools:layout_editor_absoluteX="20dp"
+            android:text="@string/title_text"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:layout_conversion_absoluteHeight="40dp"
             tools:layout_conversion_absoluteWidth="371dp"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="36dp"
             />
 
         <TextView
@@ -94,9 +95,9 @@
             android:text="@string/information_content"
             android:textSize="18sp"
             tools:layout_conversion_absoluteHeight="806dp"
-            tools:layout_editor_absoluteY="133dp"
-            tools:layout_editor_absoluteX="20dp"
             tools:layout_conversion_absoluteWidth="371dp"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="133dp"
             />
     </LinearLayout>
 </ScrollView>
