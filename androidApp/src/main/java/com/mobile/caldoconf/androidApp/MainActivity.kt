@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
 
+        makeStatusBarTransparent()
+
         (supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment).getMapAsync(this)
 
         viewBinding.buttonBottomSheetPersistent.setOnClickListener {
