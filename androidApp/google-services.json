@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "565015304759",
+    "project_id": "caldoconf",
+    "storage_bucket": "caldoconf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565015304759:android:576bf39e3b3774d13dbdb2",
+        "android_client_info": {
+          "package_name": "com.mobile.caldoconf.androidApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565015304759-vaacnf02qmvfs3phldim9c8cdrtelpoa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL1RNWNgvq54syhIuFIUl9SxD5QQxWQpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565015304759-vaacnf02qmvfs3phldim9c8cdrtelpoa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

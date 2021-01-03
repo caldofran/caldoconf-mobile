@@ -1,5 +1,4 @@
 buildscript {
-    val kotlin_version by extra("1.4.20")
     repositories {
         gradlePluginPortal()
         jcenter()
@@ -7,12 +6,13 @@ buildscript {
         mavenCentral()
     }
 
-    val kotlinVersion = "1.4.10"
+    val kotlinVersion = "1.4.20"
 
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
         classpath("com.android.tools.build:gradle:4.1.1")
         classpath("org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion")
+        classpath("com.google.gms:google-services:4.3.4")
     }
 }
 group = "com.mobile.caldoconf"

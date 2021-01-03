@@ -5,6 +5,7 @@ plugins {
     kotlin("android")
     id("kotlin-android-extensions")
     id("kotlin-android")
+    id("com.google.gms.google-services")
 }
 group = "com.mobile.caldoconf"
 version = "1.0-SNAPSHOT"
@@ -23,6 +24,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:${rootProject.extra["kotlin_version"]}")
     implementation("com.google.android.gms:play-services-maps:17.0.0")
+    implementation(platform("com.google.firebase:firebase-bom:26.2.0"))
+    implementation("com.google.firebase:firebase-analytics-ktx")
 }
 android {
     compileSdkVersion(29)
