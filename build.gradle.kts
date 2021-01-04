@@ -5,7 +5,7 @@ buildscript {
         google()
         mavenCentral()
     }
-
+    val kotlin_version by extra("1.4.20")
     val kotlinVersion = "1.4.20"
 
     dependencies {

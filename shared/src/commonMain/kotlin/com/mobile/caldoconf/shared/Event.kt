@@ -4,6 +4,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Event(
-    val identifier: String,
-    val motto: String?
+    val information: String
 )

@@ -9,8 +9,15 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.mobile.caldoconf.androidApp.databinding.ActivityMainBinding
+import com.mobile.caldoconf.shared.Repository
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
+    private val repository = Repository()
+    private val mainScope = MainScope()
+
     private val viewBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
@@ -32,6 +39,23 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 BottomSheetBehavior.STATE_COLLAPSED
             else
                 BottomSheetBehavior.STATE_EXPANDED
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        loadData()
+    }
+
+    private fun loadData() {
+//        repository.events()
+
+        mainScope.launch {
+            repository.eventsFlow.collect { value ->
+                value.forEach {
+                    println("Event: ${it.information}")
+                }
+            }
         }
     }
 
